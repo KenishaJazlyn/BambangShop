@@ -1,6 +1,6 @@
 use std::thread;
 
-use bambangshop::{Result,compose_error_responses};
+use bambangshop::{Result,compose_error_response};
 use rocket::http::Status;
 use crate::model::notification::Notification;
 use crate::model::product::Product;
@@ -26,7 +26,7 @@ impl NotificationService {
                 String::from("Subscriber not found.")
             ));
         }
-        return 0k(result.unwrap());
+        return Ok(result.unwrap());
     }
 
 }

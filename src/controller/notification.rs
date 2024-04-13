@@ -18,3 +18,4 @@ pub fn unsubscribe(product_type: &str, url: &str) -> Result<Json<Subscriber>> {
         Ok(f) => Ok(Json::from(f)),
         Err(e) => Err(e)
     };
+}
