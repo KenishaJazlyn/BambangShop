@@ -91,5 +91,15 @@ Since both the id in Program and the url in Subscriber need to be unique, using 
 
 Using DashMap is better than using the Singleton pattern with locks for managing a list of subscribers in Rust. DashMap is made for situations where many threads need to access and change data at the same time without slowing down. If we use Singleton with locks, each thread has to wait its turn to access the data, which can make things slow. 
 #### Reflection Publisher-2
+1. In the Model-View Controller (MVC) compound pattern, there is no “Service” and “Repository”. Model in MVC covers both data storage and business logic. Explain based on your understanding of design principles, why we need to separate “Service” and “Repository” from a Model?
 
+We split these responsibilities into "Service" and "Repository." The "Repository" deals only with data storage and retrieval. The "Service" handles the business logic. This separation makes the application cleaner, more manageable, and easier to update or fix.
+
+2. What happens if we only use the Model? Explain your imagination on how the interactions between each model (Program, Subscriber, Notification) affect the code complexity for each model?
+
+Using only the Model to handle both data and business logic can lead to overly complex and tightly coupled code. For example, if we have models like Program, Subscriber, and Notification, each containing logic specific to data handling and business rules, changes in one model could affect the others, increasing the risk of bugs. 
+
+3. Have you explored more about Postman? Tell us how this tool helps you to test your current work. You might want to also list which features in Postman you are interested in or feel like it is helpful to help your Group Project or any of your future software engineering projects.
+
+I have used Postman for the PBP course. Postman allows us to create and send HTTP requests, enabling us to verify responses, status codes, timings, and headers
 #### Reflection Publisher-3
