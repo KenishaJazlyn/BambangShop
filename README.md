@@ -103,3 +103,15 @@ Using only the Model to handle both data and business logic can lead to overly c
 
 I have used Postman for the PBP course. Postman allows us to create and send HTTP requests, enabling us to verify responses, status codes, timings, and headers
 #### Reflection Publisher-3
+1. Observer Pattern has two variations: Push model (publisher pushes data to subscribers) and Pull model (subscribers pull data from publisher). In this tutorial case, which variation of Observer Pattern that we use?
+
+In this tutorial, we are using `Push Model`. The publisher push  `Notification` to the subcribers whenever there is a relevant event. Subscribers receive these notifications through HTTP POST requests triggered by these events.
+
+2. What are the advantages and disadvantages of using the other variation of Observer Pattern for this tutorial case? (example: if you answer Q1 with Push, then imagine if we used Pull)
+
+- Advantages : Subscribers control when they receive updates by requesting information, which can help manage network traffic and ensure they always get the most current data when they need it.
+- Disadvantages :  It can be less efficient since subscribers have to keep checking for updates, which might use more resources and lead to delays in receiving important information, as they only get updates when they request them.
+3. Explain what will happen to the program if we decide to not use multi-threading in the notification process.
+
+
+If we decide not to use multi-threading in the notification process of a program, the program would handle notifications sequentially, one after the other. This approach could significantly slow down the overall performance, especially if sending each notification takes time or if there are many notifications to send.
